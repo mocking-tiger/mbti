@@ -1,5 +1,5 @@
-import AddColorButton from "@/components/add-color-button";
 import Header from "@/components/header";
+import SurveyList from "@/components/survey-list";
 
 export default function Home() {
   return (
@@ -8,9 +8,7 @@ export default function Home() {
         <Header />
       </header>
       <section className="w-[528px]">
-        <div>
-          <AddColorButton />
-        </div>
+        <SurveyList />
       </section>
     </main>
   );
