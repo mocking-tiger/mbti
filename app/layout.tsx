@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { FilterProvider } from "@/context/FilterContext";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-[Pretendard-Regular] antialiased`}>
-        {children}
+        <FilterProvider>{children}</FilterProvider>
       </body>
     </html>
   );

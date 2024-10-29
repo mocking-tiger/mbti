@@ -1,3 +1,6 @@
+"use client";
+
+import { useFilterContext } from "@/context/FilterContext";
 import Image from "next/image";
 
 export default function ListItem({
@@ -9,8 +12,13 @@ export default function ListItem({
   mbti: string;
   colorCode: string;
 }) {
+  const { setSelectedMBTI } = useFilterContext();
+
   return (
-    <div className="h-[78px] py-[16px] px-[48px] flex items-center hover:bg-[#F5F7FB] rounded-[8px] text-[#BFC8DA] text-[2.5rem]">
+    <div
+      className="h-[78px] py-[16px] px-[48px] flex items-center hover:bg-[#F5F7FB] rounded-[8px] text-[#BFC8DA] text-[2.5rem]"
+      onClick={() => setSelectedMBTI(mbti)}
+    >
       <h3 className="min-w-[32px] mr-[41px]">{id}</h3>
       <h3 className="min-w-[77.16px] mr-[16px] p-[8px] text-center text-[#464e5e] font-semibold bg-[rgba(178,189,204,0.20)] rounded-[8px]">
         {mbti}
