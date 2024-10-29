@@ -7,7 +7,9 @@ export const instance = axios.create({
   baseURL: BASE_URL,
 });
 
-export async function getSurveys() {
-  const response = await instance.get(`${BASE_URL}color-surveys`);
+export async function getSurveys(limit: number) {
+  const response = await instance.get(
+    `${BASE_URL}color-surveys?limit=${limit}`
+  );
   return response.data;
 }

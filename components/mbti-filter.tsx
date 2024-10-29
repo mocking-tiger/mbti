@@ -16,7 +16,13 @@ export default function FilterIcon() {
       {selectedMBTI && (
         <>
           {selectedMBTI}
-          <Image src="/Vector.svg" width={12} height={12} alt="닫기 아이콘" />
+          <Image
+            src="/Vector.svg"
+            width={12}
+            height={12}
+            style={{ width: "auto", height: "auto" }}
+            alt="닫기 아이콘"
+          />
         </>
       )}
     </div>
