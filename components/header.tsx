@@ -2,7 +2,7 @@ import FilterIcon from "./mbti-filter";
 
 export default function Header() {
   return (
-    <div className="px-[40px] py-[80px] rounded-[80px] bg-[#f5f7fb] leading-[45px]">
+    <div className="px-[40px] py-[80px] rounded-[80px] bg-[#f5f7fb] leading-[45px] fixed">
       <h1 className="text-[#464E5E] text-[4rem] text-right">
         MBTI별
         <br />
