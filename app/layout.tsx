@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-[Pretendard-Regular] antialiased`}>
+      <body className={`font-[Pretendard-Regular] antialiased select-none`}>
         <FilterProvider>{children}</FilterProvider>
       </body>
     </html>

@@ -1,6 +1,5 @@
-"use client";
-
 import AddColorHeader from "@/components/add-color-header";
+import AddColorBody from "@/components/add-color-body";
 
 export default function AddColor() {
   return (
@@ -9,8 +8,7 @@ export default function AddColor() {
         <AddColorHeader />
       </div>
       <div>
-        <h2 className="text-[2.4rem]">MBTI</h2>
-        <div></div>
+        <AddColorBody />
       </div>
     </main>
   );
