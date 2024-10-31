@@ -5,6 +5,16 @@ import MbtiBlock from "./mbti-block";
 
 export default function AddColorBody() {
   const [combinedMbti, setCombinedMbti] = useState<string[]>([]);
+  const MBTI_VALUES = [
+    { value: "e", group: 0 },
+    { value: "i", group: 0 },
+    { value: "s", group: 1 },
+    { value: "n", group: 1 },
+    { value: "t", group: 2 },
+    { value: "f", group: 2 },
+    { value: "j", group: 3 },
+    { value: "p", group: 3 },
+  ];
 
   function mbtiCombiner(value: string, index: number) {
     const tempArray = [...combinedMbti];
@@ -20,46 +30,14 @@ export default function AddColorBody() {
     <div>
       <h2 className="mb-[24px] text-[2.4rem]">MBTI</h2>
       <div className="grid grid-cols-2 gap-[16px]">
-        <MbtiBlock
-          value="e"
-          onClick={() => mbtiCombiner("e", 0)}
-          mbti={combinedMbti}
-        />
-        <MbtiBlock
-          value="i"
-          onClick={() => mbtiCombiner("i", 0)}
-          mbti={combinedMbti}
-        />
-        <MbtiBlock
-          value="s"
-          onClick={() => mbtiCombiner("s", 1)}
-          mbti={combinedMbti}
-        />
-        <MbtiBlock
-          value="n"
-          onClick={() => mbtiCombiner("n", 1)}
-          mbti={combinedMbti}
-        />
-        <MbtiBlock
-          value="t"
-          onClick={() => mbtiCombiner("t", 2)}
-          mbti={combinedMbti}
-        />
-        <MbtiBlock
-          value="f"
-          onClick={() => mbtiCombiner("f", 2)}
-          mbti={combinedMbti}
-        />
-        <MbtiBlock
-          value="j"
-          onClick={() => mbtiCombiner("j", 3)}
-          mbti={combinedMbti}
-        />
-        <MbtiBlock
-          value="p"
-          onClick={() => mbtiCombiner("p", 3)}
-          mbti={combinedMbti}
-        />
+        {MBTI_VALUES.map((item, index) => (
+          <MbtiBlock
+            key={index}
+            value={item.value}
+            onClick={() => mbtiCombiner(item.value, item.group)}
+            mbti={combinedMbti}
+          />
+        ))}
       </div>
     </div>
   );
