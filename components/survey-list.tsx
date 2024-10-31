@@ -1,17 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import AddColorButton from "./add-color-button";
-import ListItem from "./list-item";
 import { getSurveys } from "@/api/api";
 import { SurveyItem } from "@/types/types";
 import { useFilterContext } from "@/context/FilterContext";
+import GoToAddPage from "./go-to-add-page";
+import ListItem from "./list-item";
 
 export default function SurveyList() {
-  const [list, setList] = useState<SurveyItem[]>();
-  const [hasNext, setHasNext] = useState(false);
-  const [limit, setLimit] = useState(20);
   const { selectedMBTI } = useFilterContext();
+  const [list, setList] = useState<SurveyItem[]>();
+  const [limit, setLimit] = useState(20);
+  const [hasNext, setHasNext] = useState(false);
 
   const getList = async () => {
     const listData = await getSurveys(limit);
@@ -47,7 +47,7 @@ export default function SurveyList() {
 
   return (
     <div>
-      <AddColorButton />
+      <GoToAddPage />
       {list
         ?.filter((item) => selectedMBTI === "" || item.mbti === selectedMBTI)
         .map((item) => (

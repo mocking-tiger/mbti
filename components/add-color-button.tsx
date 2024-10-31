@@ -1,11 +1,27 @@
-import Link from "next/link";
+"use client";
+
+import { sendSurvey } from "@/api/api";
+import { useFilterContext } from "@/context/FilterContext";
+import { useRouter } from "next/navigation";
 
 export default function AddColorButton() {
+  const { combinedMbti, selectedColor } = useFilterContext();
+  const router = useRouter();
+
+  async function handleSubmitSurvey() {
+    const response = await sendSurvey(combinedMbti.join(""), selectedColor);
+    if (response) {
+      alert("참여해 주셔서 감사합니다!");
+      router.push("/");
+    }
+  }
+
   return (
-    <Link href="/add-color">
-      <button className="w-full py-[24px] pl-[48px] border-2 border-dashed border-[#DEE3EC] text-left hover:bg-[#F5F7FB] rounded-[8px] text-[2.4rem] text-[#464E5E]">
-        + 새 컬러 등록하기
-      </button>
-    </Link>
+    <button
+      className="w-full py-[22px] bg-[#464e5e] rounded-[16px] text-white text-[2.4rem] font-bold"
+      onClick={handleSubmitSurvey}
+    >
+      컬러 등록
+    </button>
   );
 }

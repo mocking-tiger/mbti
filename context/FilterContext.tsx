@@ -11,15 +11,30 @@ import {
 type FilterContextType = {
   selectedMBTI: string;
   setSelectedMBTI: Dispatch<SetStateAction<string>>;
+  selectedColor: string;
+  setSelectedColor: Dispatch<SetStateAction<string>>;
+  combinedMbti: string[];
+  setCombinedMbti: Dispatch<SetStateAction<string[]>>;
 };
 
 const FilterContext = createContext<FilterContextType | undefined>(undefined);
 
 export const FilterProvider = ({ children }: { children: React.ReactNode }) => {
   const [selectedMBTI, setSelectedMBTI] = useState("");
+  const [selectedColor, setSelectedColor] = useState("#000000");
+  const [combinedMbti, setCombinedMbti] = useState<string[]>([]);
 
   return (
-    <FilterContext.Provider value={{ selectedMBTI, setSelectedMBTI }}>
+    <FilterContext.Provider
+      value={{
+        selectedMBTI,
+        setSelectedMBTI,
+        selectedColor,
+        setSelectedColor,
+        combinedMbti,
+        setCombinedMbti,
+      }}
+    >
       {children}
     </FilterContext.Provider>
   );

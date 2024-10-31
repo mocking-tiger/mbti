@@ -13,3 +13,13 @@ export async function getSurveys(limit: number) {
   );
   return response.data;
 }
+
+export async function sendSurvey(mbti: string, colorCode: string) {
+  const response = await instance.post(`${BASE_URL}color-surveys`, {
+    mbti,
+    colorCode,
+    password: "0000",
+  });
+  console.log(response);
+  return response;
+}

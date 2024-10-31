@@ -1,6 +1,7 @@
 import AddColorHeader from "@/components/add-color-header";
 import AddColorBody from "@/components/add-color-body";
 import ColorSelector from "@/components/color-selector";
+import AddColorButton from "@/components/add-color-button";
 
 export default function AddColor() {
   return (
@@ -13,6 +14,9 @@ export default function AddColor() {
       </div>
       <div>
         <ColorSelector />
+      </div>
+      <div>
+        <AddColorButton />
       </div>
     </main>
   );

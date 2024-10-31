@@ -1,10 +1,11 @@
 "use client";
 
-import Image from "next/image";
+import { useFilterContext } from "@/context/FilterContext";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function ColorSelector() {
-  const [selectedColor, setSelectedColor] = useState("#000000");
+  const { selectedColor, setSelectedColor } = useFilterContext();
   const [buttonColor, setButtonColor] = useState("#f5f7fb");
 
   function randomColorGenerator() {

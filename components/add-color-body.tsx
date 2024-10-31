@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useFilterContext } from "@/context/FilterContext";
 import MbtiBlock from "./mbti-block";
 
 export default function AddColorBody() {
-  const [combinedMbti, setCombinedMbti] = useState<string[]>([]);
+  const { combinedMbti, setCombinedMbti } = useFilterContext();
   const MBTI_VALUES = [
     { value: "e", group: 0 },
     { value: "i", group: 0 },
