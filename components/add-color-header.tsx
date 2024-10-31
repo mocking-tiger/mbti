@@ -8,7 +8,7 @@ export default function AddColorHeader() {
   const [isXButtonPushed, setIsXButtonPushed] = useState(false);
 
   return (
-    <div className="text-[4rem] font-bold flex gap-[108px] items-center">
+    <div className="text-[3.2rem] lg:text-[4rem] font-bold flex gap-[71px] lg:gap-[108px] items-center">
       <h1>새 컬러 등록하기</h1>
       <Link href="/">
         <div
@@ -18,10 +18,11 @@ export default function AddColorHeader() {
           onMouseLeave={() => setIsXButtonPushed(false)}
         >
           <Image
+            className="w-[24px] h-[24px]"
             src="/x.svg"
-            width={24}
-            height={24}
-            style={{ width: "auto", height: "auto" }}
+            width={0}
+            height={0}
+            sizes="100vw"
             alt="취소버튼"
           />
         </div>

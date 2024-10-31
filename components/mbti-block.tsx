@@ -20,21 +20,23 @@ export default function MbtiBlock({
 
   return (
     <div
-      className={`px-[41px] py-[14px] flex gap-[32px] items-center border rounded-[16px] cursor-pointer ${
+      className={`px-[22px] lg:px-[41px] py-[12px] lg:py-[14px] flex gap-[16px] lg:gap-[32px] justify-center items-center border rounded-[16px] cursor-pointer ${
         isClicked ? "" : "hover:bg-[#E7EBF2]"
       } ${isClicked ? "bg-[#464E5E]" : "bg-[#fff]"}`}
       onClick={onClick}
     >
-      <div className="w-[30px] text-center">
+      <div className="w-[22px] lg:w-[30px]">
         <span
-          className={`text-[#464E5E] text-[4rem] ${
+          className={`text-[#464E5E] text-[3.6rem] lg:text-[4rem] ${
             isClicked ? "text-[#fff]" : ""
           }`}
         >
           {value && value.toUpperCase()}
         </span>
       </div>
-      <p className="text-[#8892A6] text-[2.4rem]">{valueProvider(value)}</p>
+      <p className="text-[#8892A6] text-[2rem] lg:text-[2.4rem]">
+        {valueProvider(value)}
+      </p>
     </div>
   );
 }
