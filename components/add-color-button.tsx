@@ -5,7 +5,8 @@ import { useFilterContext } from "@/context/FilterContext";
 import { useRouter } from "next/navigation";
 
 export default function AddColorButton() {
-  const { combinedMbti, selectedColor } = useFilterContext();
+  const { combinedMbti, setCombinedMbti, selectedColor, setSelectedColor } =
+    useFilterContext();
   const router = useRouter();
 
   async function handleSubmitSurvey() {
@@ -13,6 +14,8 @@ export default function AddColorButton() {
     if (response) {
       alert("참여해 주셔서 감사합니다!");
       router.push("/");
+      setCombinedMbti([]);
+      setSelectedColor("#000000");
     }
   }
 

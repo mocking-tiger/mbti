@@ -30,11 +30,13 @@ export default function ColorSelector() {
       <div className="mb-[24px] flex gap-[8px] items-center">
         <h2 className="text-[#464E5E] text-[2.4rem]">컬러</h2>
         <div
-          className="p-[8px] rounded-[8px] cursor-pointer hover:bg-[#EDF0F5]"
+          className="p-[8px] rounded-[8px] cursor-pointer"
           style={{ backgroundColor: buttonColor }}
           onClick={() => randomColorGenerator()}
           onMouseDown={() => setButtonColor("#DEE4EE")}
           onMouseUp={() => setButtonColor("#f5f7fb")}
+          onMouseLeave={() => setButtonColor("#f5f7fb")}
+          onMouseEnter={() => setButtonColor("#EDF0F5")}
         >
           <Image
             src="/repeat.svg"

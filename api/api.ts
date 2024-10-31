@@ -33,7 +33,6 @@ export async function sendSurvey(mbti: string, colorCode: string) {
       colorCode,
       password: "1234",
     });
-    console.log(response);
     return response;
   } catch (e) {
     const Error = e as ErrorType;

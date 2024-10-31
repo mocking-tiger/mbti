@@ -27,8 +27,9 @@ export default function MbtiBlock({
     >
       <div className="w-[30px] text-center">
         <span
-          className="text-[#464E5E] text-[4rem]"
-          style={{ color: isClicked ? "#fff" : "" }}
+          className={`text-[#464E5E] text-[4rem] ${
+            isClicked ? "text-[#fff]" : ""
+          }`}
         >
           {value && value.toUpperCase()}
         </span>

@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
 import { useFilterContext } from "@/context/FilterContext";
 import MbtiBlock from "./mbti-block";
 
@@ -22,10 +21,6 @@ export default function AddColorBody() {
     tempArray[index] = value.toUpperCase();
     setCombinedMbti(tempArray);
   }
-
-  useEffect(() => {
-    console.log(combinedMbti.join(""));
-  }, [combinedMbti]);
 
   return (
     <div>
