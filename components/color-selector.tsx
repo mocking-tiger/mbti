@@ -3,6 +3,7 @@
 import { useFilterContext } from "@/context/FilterContext";
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ColorSelector() {
   const { selectedColor, setSelectedColor } = useFilterContext();
@@ -27,7 +28,7 @@ export default function ColorSelector() {
 
   return (
     <div>
-      <div className="mb-[24px] flex gap-[8px] items-center">
+      <div className="w-full mb-[24px] flex gap-[8px] items-center">
         <h2 className="text-[#464E5E] text-[2.4rem]">컬러</h2>
         <div
           className="p-[8px] rounded-[8px] cursor-pointer"
@@ -46,6 +47,13 @@ export default function ColorSelector() {
             alt="랜덤생성 버튼"
           />
         </div>
+        <Link
+          className="float-right text-[1.6rem] text-[#268fb6] hover:underline"
+          href={"https://htmlcolorcodes.com/"}
+          target="_blank"
+        >
+          색상 코드 찾아보기
+        </Link>
       </div>
       <div className="flex justify-between relative">
         <input

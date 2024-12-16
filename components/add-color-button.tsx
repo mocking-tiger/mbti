@@ -21,7 +21,7 @@ export default function AddColorButton() {
 
   return (
     <button
-      className="w-full -mt-[24px] py-[22px] bg-[#464e5e] rounded-[16px] text-white text-[2.4rem] font-bold"
+      className="w-full -mt-[24px]  py-[22px] bg-[#464e5e] rounded-[16px] text-white text-[2.4rem] font-bold"
       onClick={handleSubmitSurvey}
     >
       컬러 등록

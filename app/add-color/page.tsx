@@ -5,7 +5,7 @@ import AddColorButton from "@/components/add-color-button";
 
 export default function AddColor() {
   return (
-    <main className="w-fit mx-auto mt-[45px] lg:mt-[80px] px-[24px] lg:px-0 flex flex-col gap-[48px] lg:gap-[56px] text-[#464E5E]">
+    <main className="w-fit mx-auto mt-[45px] lg:mt-[80px] lg:mb-[80px] px-[24px] lg:px-0 flex flex-col gap-[48px] lg:gap-[56px] text-[#464E5E]">
       <div>
         <AddColorHeader />
       </div>
